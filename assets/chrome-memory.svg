@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1400">
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ebe5dc"/>
+      <stop offset=".55" stop-color="#cdc6bc"/>
+      <stop offset="1" stop-color="#aaa69f"/>
+    </linearGradient>
+    <radialGradient id="peach" cx="35%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#ffd5ca"/>
+      <stop offset=".45" stop-color="#e59a8c"/>
+      <stop offset="1" stop-color="#8e4d51" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blue" cx="45%" cy="35%" r="65%">
+      <stop offset="0" stop-color="#d9faf4"/>
+      <stop offset=".35" stop-color="#7caec0"/>
+      <stop offset="1" stop-color="#25364d"/>
+    </radialGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".17" stop-color="#b9babd"/>
+      <stop offset=".36" stop-color="#4e5054"/>
+      <stop offset=".53" stop-color="#f5f4f1"/>
+      <stop offset=".69" stop-color="#7f7b7a"/>
+      <stop offset=".86" stop-color="#28272a"/>
+      <stop offset="1" stop-color="#f4e8df"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity=".75"/>
+      <stop offset=".45" stop-color="#fff" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#635f67" stop-opacity=".38"/>
+    </linearGradient>
+    <filter id="blur-70" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
+    <filter id="blur-24" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="24"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence baseFrequency=".75" numOctaves="4" seed="8" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .15"/>
+      </feComponentTransfer>
+    </filter>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="24"/>
+      <feOffset dy="34"/>
+      <feColorMatrix values="0 0 0 0 0.05 0 0 0 0 0.04 0 0 0 0 0.04 0 0 0 .4 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="2000" height="1400" fill="url(#paper)"/>
+  <ellipse cx="620" cy="690" rx="520" ry="520" fill="url(#peach)" filter="url(#blur-70)"/>
+  <ellipse cx="1470" cy="340" rx="360" ry="360" fill="url(#blue)" opacity=".8" filter="url(#blur-24)"/>
+  <g filter="url(#shadow)">
+    <path d="M195 875C435 595 650 580 810 725S1120 930 1440 605 1830 360 1980 475"
+          fill="none" stroke="url(#metal)" stroke-width="150" stroke-linecap="round"/>
+    <path d="M235 910C470 645 665 640 806 767S1110 962 1419 655 1804 424 1953 520"
+          fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <ellipse cx="650" cy="738" rx="262" ry="262" fill="url(#blue)"/>
+  <ellipse cx="575" cy="638" rx="90" ry="72" fill="#fff" opacity=".6" filter="url(#blur-24)"/>
+  <path d="M1170 160L1440 260L1230 655L980 520Z" fill="url(#glass)" stroke="#fff" stroke-opacity=".55" stroke-width="3"/>
+  <path d="M1228 300C1330 290 1440 340 1490 430" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="4"/>
+  <g fill="#1a1718">
+    <circle cx="1555" cy="850" r="6"/>
+    <circle cx="1582" cy="850" r="6"/>
+    <circle cx="1609" cy="850" r="6"/>
+  </g>
+  <path d="M1300 1080H1760" stroke="#1b191a" stroke-opacity=".35" stroke-width="2"/>
+  <path d="M1300 1112H1650" stroke="#1b191a" stroke-opacity=".15" stroke-width="2"/>
+  <path d="M240 260H780" stroke="#1b191a" stroke-opacity=".2" stroke-width="2"/>
+  <path d="M240 286H610" stroke="#1b191a" stroke-opacity=".12" stroke-width="2"/>
+  <rect width="2000" height="1400" filter="url(#grain)" opacity=".45"/>
+</svg>

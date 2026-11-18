@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="AIGC 视觉设计师个人作品集：AI 视觉、品牌艺术指导与动态影像。"
+    />
+    <title>AIGC® — Visual Designer</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader__art" aria-hidden="true">
+        <img src="./assets/body-signal.svg" alt="" />
+        <img src="./assets/silicon-bloom.svg" alt="" />
+        <img src="./assets/chrome-memory.svg" alt="" />
+        <img src="./assets/soft-machine.svg" alt="" />
+      </div>
+      <div class="loader__info">
+        <span>JUST A SEC!</span>
+        <span class="loader__count" id="loader-count">000</span>
+      </div>
+      <div class="loader__rule"><span></span></div>
+    </div>
+
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true">VIEW</div>
+
+    <header class="site-header" id="site-header">
+      <div class="header-left">
+        <a class="brand" href="#stage" data-navigate="top" aria-label="返回首页">
+          <svg viewBox="0 0 44 26" aria-hidden="true">
+            <path d="M2 5 13 21M42 5 31 21M12 5l10 16M32 5 22 21" />
+          </svg>
+          <span>AIGC®</span>
+        </a>
+        <span class="page-progress">PROGRESS <b id="page-progress">000%</b></span>
+      </div>
+      <span class="availability"><i></i> AVAILABLE FOR WORK</span>
+      <nav class="desktop-nav" aria-label="主导航">
+        <a href="#works" data-navigate="works">WORKS</a>
+        <a href="#about" data-navigate="about">ABOUT</a>
+        <a href="#contact" data-navigate="contact">CONTACT</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span>
+        <span class="sr-only">打开导航</span>
+      </button>
+    </header>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="移动端导航">
+      <a href="#works" data-navigate="works"><span>01</span>WORKS</a>
+      <a href="#about" data-navigate="about"><span>02</span>ABOUT</a>
+      <a href="#contact" data-navigate="contact"><span>03</span>CONTACT</a>
+      <p>让未见之物，<br />成为可以被相信的画面。</p>
+    </nav>
+
+    <main>
+      <section class="horizontal-stage" id="stage">
+        <div class="horizontal-pin">
+          <div class="horizontal-track" id="horizontal-track">
+            <section class="scene hero-scene">
+              <div class="hero-services">
+                <span class="micro">(SERVICES)</span>
+                <ul>
+                  <li>AIGC Art Direction</li>
+                  <li>Brand Visual Systems</li>
+                  <li>AI Image & Film</li>
+                  <li>Creative Direction</li>
+                  <li>World Building</li>
+                  <li>Motion Design</li>
+                </ul>
+              </div>
+
+              <div class="hero-copy">
+                <div class="hero-line hero-line--one">
+                  <h1>HI, AIGC® HERE</h1>
+                  <span class="hero-location">From Remote<br />Working globally</span>
+                </div>
+                <div class="hero-line hero-line--two">
+                  <h1>(VISUAL)</h1>
+                  <h1>→DESIGNER</h1>
+                </div>
+              </div>
+
+              <div class="hero-bottom">
+                <span>Volume 1. <b>02B</b></span>
+                <span class="hero-manifesto">以 AI 为笔，构建真实与想象之间的品牌视觉。</span>
+                <span>Scroll to explore ↓</span>
+              </div>
+            </section>
+
+            <article class="scene project-scene" data-project="0">
+              <div class="project-preview">
+                <img src="./assets/silicon-bloom.svg" alt="硅基花卉概念视觉" />
+                <span class="image-caption">AI ART DIRECTION / PERSONAL STUDY</span>
+              </div>
+              <div class="project-copy">
+                <span class="project-number">01</span>
+                <span class="project-year">(2026)</span>
+                <h2>SILICON<br />BLOOM</h2>
+                <ul>
+                  <li>AIGC Art Direction</li>
+                  <li>CGI & Visual Design</li>
+                </ul>
+                <button class="project-open" type="button" data-open-project="0">VIEW PROJECT ↗</button>
+              </div>
+            </article>
+
+            <article class="scene project-scene project-scene--reverse" data-project="1">
+              <div class="project-preview">
+                <img src="./assets/chrome-memory.svg" alt="液态金属与记忆概念视觉" loading="lazy" />
+                <span class="image-caption">CAMPAIGN VISUAL / 3D</span>
+              </div>
+              <div class="project-copy">
+                <span class="project-number">02</span>
+                <span class="project-year">(2025)</span>
+                <h2>CHROME<br />MEMORY</h2>
+                <ul>
+                  <li>Campaign Visual</li>
+                  <li>Art Direction</li>
+                </ul>
+                <button class="project-open" type="button" data-open-project="1">VIEW PROJECT ↗</button>
+              </div>
+            </article>
+
+            <article class="scene project-scene" data-project="2">
+              <div class="project-preview">
+                <img src="./assets/body-signal.svg" alt="人体信号与数字身份概念视觉" loading="lazy" />
+                <span class="image-caption">AI FILM / VISUAL IDENTITY</span>
+              </div>
+              <div class="project-copy">
+                <span class="project-number">03</span>
+                <span class="project-year">(2025)</span>
+                <h2>BODY /<br />SIGNAL</h2>
+                <ul>
+                  <li>AI Film</li>
+                  <li>Visual Identity</li>
+                </ul>
+                <button class="project-open" type="button" data-open-project="2">VIEW PROJECT ↗</button>
+              </div>
+            </article>
+
+            <article class="scene project-scene project-scene--reverse" data-project="3">
+              <div class="project-preview">
+                <img src="./assets/soft-machine.svg" alt="柔软机械概念视觉" loading="lazy" />
+                <span class="image-caption">PRODUCT WORLD / ART DIRECTION</span>
+              </div>
+              <div class="project-copy">
+                <span class="project-number">04</span>
+                <span class="project-year">(2024)</span>
+                <h2>SOFT<br />MACHINE</h2>
+                <ul>
+                  <li>Product World</li>
+                  <li>Art Direction</li>
+                </ul>
+                <button class="project-open" type="button" data-open-project="3">VIEW PROJECT ↗</button>
+              </div>
+            </article>
+
+            <section class="scene works-scene" id="works">
+              <div class="works-heading">
+                <span class="micro">(SELECTED INDEX)</span>
+                <h2>OTHER WORKS</h2>
+              </div>
+              <div class="works-table">
+                <div class="works-table__head">
+                  <span>Name</span><span>Year</span><span>Services</span>
+                </div>
+                <button type="button" data-open-project="0">
+                  <span>SILICON BLOOM</span><span>2026</span><span>AIGC Art Direction, CGI</span>
+                </button>
+                <button type="button" data-open-project="1">
+                  <span>CHROME MEMORY</span><span>2025</span><span>Campaign Visual, 3D</span>
+                </button>
+                <button type="button" data-open-project="2">
+                  <span>BODY / SIGNAL</span><span>2025</span><span>AI Film, Visual Identity</span>
+                </button>
+                <button type="button" data-open-project="3">
+                  <span>SOFT MACHINE</span><span>2024</span><span>Product World, Art Direction</span>
+                </button>
+                <div class="works-table__row">
+                  <span>NEURAL GARDEN</span><span>2024</span><span>Concept, AI Image</span>
+                </div>
+                <div class="works-table__row">
+                  <span>AFTERIMAGE</span><span>2023</span><span>Image System, Motion</span>
+                </div>
+              </div>
+              <div class="works-footer">
+                <span>AVAILABLE FOR SELECTED COLLABORATIONS</span>
+                <a href="#contact" data-navigate="contact">REQUEST FULL PORTFOLIO ↗</a>
+              </div>
+            </section>
+
+            <section class="scene about-scene" id="about">
+              <div class="about-art">
+                <img src="./assets/soft-machine.svg" alt="柔软机械视觉" loading="lazy" />
+                <div class="about-art__stamp">
+                  <span>HUMAN</span><i>×</i><span>MACHINE</span>
+                </div>
+              </div>
+              <div class="about-copy">
+                <span class="micro">(ABOUT THE DESIGNER)</span>
+                <h2>
+                  I ENHANCE BRAND WORLDS WITH INTENTIONAL, IMAGINATIVE &amp; AI-DRIVEN VISUALS.
+                </h2>
+                <div class="about-intro">
+                  <p>
+                    我是一名专注 AIGC 视觉创作的设计师。工作横跨品牌视觉、概念艺术、
+                    动态影像与数字内容，习惯先厘清品牌真正要表达什么，再决定技术如何介入。
+                  </p>
+                  <p>
+                    创作结合摄影语言、三维审美与生成工具，让 AI 成为创意的放大器，
+                    而不是批量生产答案的机器。
+                  </p>
+                </div>
+                <div class="toolkit">
+                  <span>TOOLKIT</span>
+                  <ul>
+                    <li>Midjourney</li>
+                    <li>ComfyUI</li>
+                    <li>Runway</li>
+                    <li>Photoshop</li>
+                    <li>Cinema 4D</li>
+                    <li>Figma</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section class="scene contact-scene" id="contact">
+              <div class="contact-thanks">
+                <span class="micro">(THANK YOU)</span>
+                <p>Thanks for<br />stopping by.</p>
+                <span>你的到访，本身就是一次灵感交换。</span>
+              </div>
+              <div class="contact-panel">
+                <div class="contact-top">
+                  <span>(START A PROJECT)</span>
+                  <span>OPEN FOR COLLABORATION / 2026</span>
+                </div>
+                <div class="contact-main">
+                  <h2>LET'S ✱<br />CONNECT</h2>
+                  <p>
+                    有一个项目，或者只是想聊聊？<br />
+                    让我们把脑海里的画面变成可以被看见的世界。
+                  </p>
+                  <a class="email-link" href="mailto:hello@yourname.studio">
+                    <span>HELLO@YOURNAME.STUDIO</span><i>↗</i>
+                  </a>
+                  <button class="copy-email" type="button" data-email="hello@yourname.studio">
+                    COPY EMAIL
+                  </button>
+                </div>
+                <div class="contact-footer">
+                  <span>© 2026 AIGC®</span>
+                  <span>BEHANCE / INSTAGRAM / 小红书</span>
+                  <span>BACK TO TOP ↑</span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="project-modal" id="project-modal" aria-labelledby="modal-title">
+      <button class="modal-close" type="button" aria-label="关闭项目详情">CLOSE ×</button>
+      <div class="modal-layout">
+        <div class="modal-visual">
+          <img id="modal-image" src="" alt="" />
+          <span class="modal-index" id="modal-index">01</span>
+        </div>
+        <div class="modal-content">
+          <div>
+            <span class="micro">SELECTED PROJECT</span>
+            <h2 id="modal-title"></h2>
+            <p class="modal-lede" id="modal-lede"></p>
+          </div>
+          <dl>
+            <div><dt>YEAR</dt><dd id="modal-year"></dd></div>
+            <div><dt>SCOPE</dt><dd id="modal-scope"></dd></div>
+            <div><dt>ROLE</dt><dd>AIGC Visual Direction / Creative Production</dd></div>
+          </dl>
+          <p class="modal-note">此项目视觉为网站预览占位内容，可替换为你的真实作品。</p>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

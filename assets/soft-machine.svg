@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dfe4c9"/>
+      <stop offset=".55" stop-color="#cfd6b2"/>
+      <stop offset="1" stop-color="#a9b18d"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="34%" cy="28%" r="70%">
+      <stop offset="0" stop-color="#f5f0e9"/>
+      <stop offset=".08" stop-color="#b7b5b2"/>
+      <stop offset=".27" stop-color="#46484c"/>
+      <stop offset=".58" stop-color="#090b0c"/>
+      <stop offset="1" stop-color="#000"/>
+    </radialGradient>
+    <linearGradient id="acid" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eaff62" stop-opacity=".9"/>
+      <stop offset=".5" stop-color="#9fd52c" stop-opacity=".76"/>
+      <stop offset="1" stop-color="#3e6b22" stop-opacity=".62"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f4f1"/>
+      <stop offset=".2" stop-color="#858585"/>
+      <stop offset=".48" stop-color="#f1f0ed"/>
+      <stop offset=".7" stop-color="#454446"/>
+      <stop offset=".88" stop-color="#d6d3cd"/>
+      <stop offset="1" stop-color="#515255"/>
+    </linearGradient>
+    <filter id="blur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="48"/>
+    </filter>
+    <filter id="shadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="26"/>
+      <feOffset dy="34"/>
+      <feColorMatrix values="0 0 0 0 0.04 0 0 0 0 0.06 0 0 0 0 0.03 0 0 0 .42 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="grain">
+      <feTurbulence baseFrequency=".74" numOctaves="4" seed="14" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 .13"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="2000" height="1400" fill="url(#bg)"/>
+  <ellipse cx="980" cy="1430" rx="900" ry="610" fill="#ecff8a" opacity=".35" filter="url(#blur)"/>
+  <g filter="url(#shadow)">
+    <path d="M60 920C300 580 540 600 830 830S1410 1210 1980 760V1400H60Z" fill="url(#acid)"/>
+    <path d="M65 942C305 602 545 622 835 852S1415 1232 1985 782" fill="none" stroke="#f8ffc9" stroke-opacity=".8" stroke-width="5"/>
+  </g>
+  <circle cx="1325" cy="610" r="340" fill="url(#orb)" filter="url(#shadow)"/>
+  <ellipse cx="1217" cy="475" rx="85" ry="48" fill="#fff" opacity=".3" filter="url(#blur)" transform="rotate(-28 1217 475)"/>
+  <g filter="url(#shadow)">
+    <path d="M250 1040L420 220" stroke="url(#steel)" stroke-width="115" stroke-linecap="round"/>
+    <path d="M610 1100L510 340" stroke="url(#steel)" stroke-width="62" stroke-linecap="round"/>
+    <path d="M420 220L510 340" stroke="url(#steel)" stroke-width="70" stroke-linecap="round"/>
+  </g>
+  <g fill="#22221c">
+    <circle cx="1630" cy="310" r="6"/>
+    <circle cx="1660" cy="310" r="6"/>
+    <circle cx="1690" cy="310" r="6"/>
+  </g>
+  <path d="M160 220H470" stroke="#1c2015" stroke-opacity=".35" stroke-width="2"/>
+  <path d="M160 246H360" stroke="#1c2015" stroke-opacity=".18" stroke-width="2"/>
+  <path d="M1420 1080H1820" stroke="#1c2015" stroke-opacity=".28" stroke-width="2"/>
+  <path d="M1540 1110H1820" stroke="#1c2015" stroke-opacity=".13" stroke-width="2"/>
+  <rect width="2000" height="1400" filter="url(#grain)" opacity=".4"/>
+</svg>
