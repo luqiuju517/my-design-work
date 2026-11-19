@@ -199,7 +199,7 @@ function navigateTo(name) {
           ? document.querySelector("#works")
           : name === "about"
             ? document.querySelector("#about")
-            : document.querySelector("#contact");
+            : document.querySelector("#personal-info");
     const top = target.getBoundingClientRect().top + window.scrollY - (name === "top" ? 0 : 55);
     window.scrollTo({ top, behavior: reduceMotion ? "auto" : "smooth" });
     return;
@@ -276,18 +276,3 @@ modal.addEventListener("click", (event) => {
   if (event.target === modal) closeModal();
 });
 modal.addEventListener("close", () => body.classList.remove("is-locked"));
-
-document.querySelector(".copy-email").addEventListener("click", async (event) => {
-  const button = event.currentTarget;
-  const email = button.dataset.email;
-
-  try {
-    await navigator.clipboard.writeText(email);
-    button.textContent = "COPIED ✓";
-    window.setTimeout(() => {
-      button.textContent = "COPY EMAIL";
-    }, 1800);
-  } catch {
-    button.textContent = email;
-  }
-});

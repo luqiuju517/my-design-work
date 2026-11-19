@@ -908,26 +908,93 @@ img {
   line-height: 1.65;
 }
 
-.email-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-bottom: 7px;
-  border-bottom: 1px solid currentColor;
-  font-size: clamp(15px, 1.38vw, 21px);
-  letter-spacing: -0.035em;
+.contact-directory {
+  border: 1px solid rgba(12, 12, 12, 0.72);
 }
 
-.email-link i {
-  font-style: normal;
+.contact-directory__profile {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
 }
 
-.copy-email {
-  padding: 7px 9px;
-  margin-top: 13px;
-  border: 1px solid currentColor;
-  border-radius: 999px;
+.contact-directory__column {
+  min-width: 0;
+  padding: 18px 20px 20px;
+}
+
+.contact-directory__column + .contact-directory__column {
+  border-left: 1px solid rgba(12, 12, 12, 0.32);
+}
+
+.contact-directory__label {
   font: 8px/1 var(--mono);
+  letter-spacing: 0.04em;
+}
+
+.contact-list,
+.contact-social-list {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 16px 0 0;
+  list-style: none;
+}
+
+.contact-list div,
+.contact-social-list li {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 12px;
+  align-items: baseline;
+}
+
+.contact-list dt,
+.contact-social-list span,
+.contact-channels {
+  font: 8px/1.45 var(--mono);
+}
+
+.contact-list dd,
+.contact-social-list strong,
+.contact-social-list a {
+  min-width: 0;
+  margin: 0;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.contact-social-list a {
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.contact-directory__contact {
+  display: grid;
+  grid-template-columns: 78px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: start;
+  padding: 16px 20px 18px;
+  border-top: 1px solid rgba(12, 12, 12, 0.32);
+}
+
+.contact-channels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+}
+
+.contact-channels a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.contact-directory__contact p {
+  margin: 0;
+  font-size: 9px;
+  line-height: 1.45;
+  text-align: right;
 }
 
 .contact-footer {
