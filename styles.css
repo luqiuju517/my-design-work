@@ -485,10 +485,19 @@ img {
 .hero-line h1 {
   margin: 0;
   font-size: clamp(56px, 8.45vw, 130px);
+  perspective: 700px;
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 0.98;
   white-space: nowrap;
+}
+
+.fold-char {
+  display: inline-block;
+  transform-origin: 50% 0%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
 }
 
 .hero-line--two {

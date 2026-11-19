@@ -47,6 +47,66 @@ const modal = document.querySelector("#project-modal");
 const modalClose = document.querySelector(".modal-close");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const mobileQuery = window.matchMedia("(max-width: 900px)");
+const heroCopy = document.querySelector(".hero-copy");
+const foldTargets = [...document.querySelectorAll(".hero-copy h1")];
+let foldChars = [];
+let foldPlayed = false;
+let heroInView = true;
+
+function prepareFoldText() {
+  if (!window.gsap || reduceMotion) return;
+
+  foldTargets.forEach((target) => {
+    const text = target.textContent;
+    const fragment = document.createDocumentFragment();
+
+    Array.from(text).forEach((character) => {
+      const span = document.createElement("span");
+      span.className = "fold-char";
+      span.setAttribute("aria-hidden", "true");
+      span.textContent = character === " " ? "\u00a0" : character;
+      fragment.append(span);
+      foldChars.push(span);
+    });
+
+    target.setAttribute("aria-label", text);
+    target.replaceChildren(fragment);
+  });
+
+  window.gsap.set(foldChars, {
+    rotationX: -92,
+    opacity: 0,
+    transformOrigin: "50% 0%",
+    transformPerspective: 700,
+  });
+}
+
+function playFoldText() {
+  if (!window.gsap || reduceMotion || foldPlayed || foldChars.length === 0) return;
+
+  foldPlayed = true;
+  window.gsap.to(foldChars, {
+    rotationX: 0,
+    opacity: 1,
+    duration: 0.65,
+    stagger: 0.045,
+    ease: "power3.out",
+  });
+}
+
+prepareFoldText();
+
+if ("IntersectionObserver" in window) {
+  const foldObserver = new IntersectionObserver(
+    ([entry]) => {
+      heroInView = entry.isIntersecting;
+      if (heroInView && loaderDone) playFoldText();
+    },
+    { threshold: [0, 0.2] },
+  );
+
+  foldObserver.observe(heroCopy);
+}
 
 let progressValue = 0;
 let loaderDone = false;
@@ -68,6 +128,10 @@ function finishLoader() {
   loader.classList.add("is-complete");
   body.classList.remove("is-locked");
   updateStage();
+
+  window.setTimeout(() => {
+    if (heroInView) playFoldText();
+  }, 320);
 }
 
 window.setTimeout(finishLoader, 2300);
