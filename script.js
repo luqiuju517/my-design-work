@@ -6,6 +6,7 @@ const projects = [
     image: "./assets/silicon-bloom.svg",
     alt: "硅基花卉概念视觉",
     lede: "当自然形态由硅基逻辑重新生长，花朵成为计算、欲望与生命之间的一次视觉实验。",
+    page: "./project-01.html",
   },
   {
     title: "CHROME MEMORY",
@@ -14,6 +15,7 @@ const projects = [
     image: "./assets/chrome-memory.svg",
     alt: "液态金属与记忆概念视觉",
     lede: "以液态金属模拟记忆的反射与变形，让品牌叙事在柔软和锋利之间保持张力。",
+    page: "./project-02.html",
   },
   {
     title: "BODY / SIGNAL",
@@ -22,6 +24,7 @@ const projects = [
     image: "./assets/body-signal.svg",
     alt: "人体信号与数字身份概念视觉",
     lede: "一次关于数字身份的视觉研究：身体被转译成信号，情绪则在噪点与红光之间被感知。",
+    page: "./project-03.html",
   },
   {
     title: "SOFT MACHINE",
@@ -30,6 +33,7 @@ const projects = [
     image: "./assets/soft-machine.svg",
     alt: "柔软机械概念视觉",
     lede: "让工业感退后一步，把精密机械放进柔软、明亮、带有生命感的产品世界。",
+    page: "./project-04.html",
   },
 ];
 
@@ -267,20 +271,7 @@ document.addEventListener("click", (event) => {
 
   const index = Number(trigger.dataset.openProject);
   const project = projects[index];
-
-  document.querySelector("#modal-title").textContent = project.title;
-  document.querySelector("#modal-year").textContent = project.year;
-  document.querySelector("#modal-scope").textContent = project.scope;
-  document.querySelector("#modal-lede").textContent = project.lede;
-  document.querySelector("#modal-index").textContent = String(index + 1).padStart(2, "0");
-
-  const modalImage = document.querySelector("#modal-image");
-  modalImage.src = project.image;
-  modalImage.alt = project.alt;
-
-  body.classList.add("is-locked");
-  modal.showModal();
-  modalClose.focus();
+  if (project?.page) window.location.assign(project.page);
 });
 
 function closeModal() {
@@ -335,3 +326,7 @@ hobbyButtons.forEach((button, index) => {
 hobbyList.addEventListener("pointerleave", startHobbyCarousel);
 showHobby(0);
 startHobbyCarousel();
+
+if (new URLSearchParams(window.location.search).get("view") === "works") {
+  window.requestAnimationFrame(() => navigateTo("works"));
+}
