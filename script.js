@@ -42,7 +42,6 @@ const menuButton = document.querySelector(".menu-toggle");
 const mobileNav = document.querySelector("#mobile-nav");
 const stage = document.querySelector("#stage");
 const track = document.querySelector("#horizontal-track");
-const cursor = document.querySelector(".cursor");
 const modal = document.querySelector("#project-modal");
 const modalClose = document.querySelector(".modal-close");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -232,16 +231,34 @@ document.querySelectorAll("[data-navigate]").forEach((link) => {
   });
 });
 
-if (!reduceMotion) {
-  window.addEventListener("pointermove", (event) => {
-    if (event.pointerType === "touch") return;
-    cursor.style.left = `${event.clientX}px`;
-    cursor.style.top = `${event.clientY}px`;
-  });
+document.querySelectorAll("a, button").forEach((element) => {
+  element.classList.add("cursor-target");
+  const label =
+    element.dataset.cursorLabel ||
+    element.getAttribute("aria-label") ||
+    element.textContent.replace(/\s+/g, " ").trim();
 
-  document.querySelectorAll(".project-preview, .project-copy h2, .about-art").forEach((target) => {
-    target.addEventListener("pointerenter", () => cursor.classList.add("is-visible"));
-    target.addEventListener("pointerleave", () => cursor.classList.remove("is-visible"));
+  if (label) element.dataset.cursorLabel = label.slice(0, 18);
+});
+
+[
+  [".project-preview", "VIEW"],
+  [".project-copy h2", "VIEW"],
+  [".about-art", "ABOUT"],
+].forEach(([selector, label]) => {
+  document.querySelectorAll(selector).forEach((element) => {
+    element.classList.add("cursor-target");
+    element.dataset.cursorLabel ||= label;
+  });
+});
+
+if (window.TargetCursor) {
+  new window.TargetCursor({
+    cursorColor: "#ff0000",
+    cursorColorOnTarget: "#ff0000",
+    spinDuration: 2,
+    hideDefaultCursor: true,
+    parallaxOn: true,
   });
 }
 
