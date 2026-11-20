@@ -276,3 +276,45 @@ modal.addEventListener("click", (event) => {
   if (event.target === modal) closeModal();
 });
 modal.addEventListener("close", () => body.classList.remove("is-locked"));
+
+const hobbyList = document.querySelector(".hobby-list");
+const hobbyButtons = [...document.querySelectorAll(".hobby-list button")];
+const hobbySlides = [...document.querySelectorAll(".hobby-slide")];
+const hobbyIndex = document.querySelector("#hobby-index");
+let activeHobby = 0;
+let hobbyTimer;
+
+function showHobby(index) {
+  activeHobby = (index + hobbySlides.length) % hobbySlides.length;
+  hobbyButtons.forEach((button, buttonIndex) => {
+    button.classList.toggle("is-active", buttonIndex === activeHobby);
+  });
+  hobbySlides.forEach((slide, slideIndex) => {
+    slide.classList.toggle("is-active", slideIndex === activeHobby);
+  });
+  hobbyIndex.textContent = String(activeHobby + 1).padStart(2, "0");
+}
+
+function stopHobbyCarousel() {
+  window.clearInterval(hobbyTimer);
+  hobbyTimer = undefined;
+}
+
+function startHobbyCarousel() {
+  stopHobbyCarousel();
+  if (reduceMotion || hobbySlides.length < 2) return;
+  hobbyTimer = window.setInterval(() => showHobby(activeHobby + 1), 4200);
+}
+
+hobbyButtons.forEach((button, index) => {
+  button.addEventListener("pointerenter", () => {
+    stopHobbyCarousel();
+    showHobby(index);
+  });
+  button.addEventListener("focus", () => showHobby(index));
+  button.addEventListener("click", () => showHobby(index));
+});
+
+hobbyList.addEventListener("pointerleave", startHobbyCarousel);
+showHobby(0);
+startHobbyCarousel();
