@@ -591,11 +591,41 @@ img {
 }
 
 .project-copy {
+  position: relative;
+  isolation: isolate;
   display: flex;
   min-height: 77vh;
   align-self: center;
   flex-direction: column;
+  overflow: hidden;
   padding-top: 6px;
+  background: var(--black);
+  cursor: pointer;
+}
+
+.project-copy::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--project-image) center / cover no-repeat;
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(1.035);
+  transition:
+    opacity 0.4s ease,
+    transform 0.8s cubic-bezier(0.18, 0.7, 0.2, 1);
+}
+
+.project-copy:hover::before,
+.project-copy:focus-within::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.project-copy > * {
+  position: relative;
+  z-index: 1;
 }
 
 .project-number {
@@ -792,7 +822,7 @@ img {
 .about-copy h2 {
   max-width: 800px;
   margin: auto 0 45px;
-  font-size: clamp(37px, 3.8vw, 59px);
+  font-size: clamp(32px, 3.35vw, 52px);
   font-weight: 700;
   letter-spacing: -0.045em;
   line-height: 0.98;
@@ -1433,7 +1463,7 @@ img {
 
   .about-copy h2 {
     margin: 23px 0 28px;
-    font-size: clamp(32px, 9.8vw, 53px);
+    font-size: clamp(27px, 7.4vw, 41px);
   }
 
   .about-intro {

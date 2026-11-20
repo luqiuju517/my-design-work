@@ -8,7 +8,7 @@
       content="AIGC 视觉设计师个人作品集：AI 视觉、品牌艺术指导与动态影像。"
     />
     <title>AIGC® — Visual Designer</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20261120-panels" />
     <link rel="stylesheet" href="./target-cursor.css?v=20261120" />
   </head>
   <body>
@@ -96,7 +96,11 @@
                 <img src="./assets/silicon-bloom.svg" alt="硅基花卉概念视觉" />
                 <span class="image-caption">AI ART DIRECTION / PERSONAL STUDY</span>
               </div>
-              <div class="project-copy">
+              <div
+                class="project-copy"
+                data-open-project="0"
+                style="--project-image: url('./assets/silicon-bloom.svg')"
+              >
                 <span class="project-number">01</span>
                 <span class="project-year">（2026）</span>
                 <h2>品牌<br />设计</h2>
@@ -111,7 +115,11 @@
               <div class="project-preview">
                 <img src="./assets/chrome-memory.svg" alt="液态金属与记忆概念视觉" loading="lazy" />
               </div>
-              <div class="project-copy">
+              <div
+                class="project-copy"
+                data-open-project="1"
+                style="--project-image: url('./assets/chrome-memory.svg')"
+              >
                 <span class="project-number">02</span>
                 <span class="project-year">（2026）</span>
                 <h2>电商<br />全案设计</h2>
@@ -127,7 +135,11 @@
               <div class="project-preview">
                 <img src="./assets/body-signal.svg" alt="人体信号与数字身份概念视觉" loading="lazy" />
               </div>
-              <div class="project-copy">
+              <div
+                class="project-copy"
+                data-open-project="2"
+                style="--project-image: url('./assets/body-signal.svg')"
+              >
                 <span class="project-number">03</span>
                 <span class="project-year">（2026）</span>
                 <h2>线下<br />物料设计</h2>
@@ -144,7 +156,11 @@
                 <img src="./assets/soft-machine.svg" alt="柔软机械概念视觉" loading="lazy" />
                 <span class="image-caption">PRODUCT WORLD / ART DIRECTION</span>
               </div>
-              <div class="project-copy">
+              <div
+                class="project-copy"
+                data-open-project="3"
+                style="--project-image: url('./assets/soft-machine.svg')"
+              >
                 <span class="project-number">04</span>
                 <span class="project-year">（2026）</span>
                 <h2>其他<br />设计</h2>
@@ -343,6 +359,6 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="./aurora.js"></script>
     <script src="./target-cursor.js?v=20261120"></script>
-    <script src="./script.js?v=20261120"></script>
+    <script src="./script.js?v=20261120-panels"></script>
   </body>
 </html>

@@ -243,7 +243,7 @@ document.querySelectorAll("a, button").forEach((element) => {
 
 [
   [".project-preview", "VIEW"],
-  [".project-copy h2", "VIEW"],
+  [".project-copy", "VIEW"],
   [".about-art", "ABOUT"],
 ].forEach(([selector, label]) => {
   document.querySelectorAll(selector).forEach((element) => {
@@ -262,25 +262,26 @@ if (window.TargetCursor) {
   });
 }
 
-document.querySelectorAll("[data-open-project]").forEach((button) => {
-  button.addEventListener("click", () => {
-    const index = Number(button.dataset.openProject);
-    const project = projects[index];
+document.addEventListener("click", (event) => {
+  const trigger = event.target.closest("[data-open-project]");
+  if (!trigger) return;
 
-    document.querySelector("#modal-title").textContent = project.title;
-    document.querySelector("#modal-year").textContent = project.year;
-    document.querySelector("#modal-scope").textContent = project.scope;
-    document.querySelector("#modal-lede").textContent = project.lede;
-    document.querySelector("#modal-index").textContent = String(index + 1).padStart(2, "0");
+  const index = Number(trigger.dataset.openProject);
+  const project = projects[index];
 
-    const modalImage = document.querySelector("#modal-image");
-    modalImage.src = project.image;
-    modalImage.alt = project.alt;
+  document.querySelector("#modal-title").textContent = project.title;
+  document.querySelector("#modal-year").textContent = project.year;
+  document.querySelector("#modal-scope").textContent = project.scope;
+  document.querySelector("#modal-lede").textContent = project.lede;
+  document.querySelector("#modal-index").textContent = String(index + 1).padStart(2, "0");
 
-    body.classList.add("is-locked");
-    modal.showModal();
-    modalClose.focus();
-  });
+  const modalImage = document.querySelector("#modal-image");
+  modalImage.src = project.image;
+  modalImage.alt = project.alt;
+
+  body.classList.add("is-locked");
+  modal.showModal();
+  modalClose.focus();
 });
 
 function closeModal() {
