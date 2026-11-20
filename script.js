@@ -242,7 +242,6 @@ document.querySelectorAll("a, button").forEach((element) => {
 });
 
 [
-  [".project-preview", "VIEW"],
   [".project-copy", "VIEW"],
   [".about-art", "ABOUT"],
 ].forEach(([selector, label]) => {
