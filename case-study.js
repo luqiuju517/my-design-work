@@ -68,6 +68,7 @@
       const span = document.createElement("span");
       span.className = "case-title__char";
       span.style.setProperty("--char-index", index);
+      span.dataset.char = character;
       span.setAttribute("aria-hidden", "true");
       span.textContent = character;
       return span;
