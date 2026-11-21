@@ -327,6 +327,7 @@ hobbyList.addEventListener("pointerleave", startHobbyCarousel);
 showHobby(0);
 startHobbyCarousel();
 
-if (new URLSearchParams(window.location.search).get("view") === "works") {
-  window.requestAnimationFrame(() => navigateTo("works"));
+const requestedView = new URLSearchParams(window.location.search).get("view");
+if (requestedView === "works" || requestedView === "contact") {
+  window.requestAnimationFrame(() => navigateTo(requestedView));
 }

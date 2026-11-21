@@ -56,13 +56,13 @@
 
   document.title = `${current.title} | AIGC®`;
   document.querySelector("[data-case-index]").textContent = current.id;
-  document.querySelector("[data-case-english]").textContent = current.english;
   document.querySelector("[data-case-year]").textContent = current.year;
   document.querySelector("[data-case-scope]").textContent = current.scope;
   document.querySelector("[data-case-description]").textContent = current.description;
 
   const title = document.querySelector("[data-case-title]");
   title.setAttribute("aria-label", current.title);
+  title.dataset.title = current.title;
   title.replaceChildren(
     ...[...current.title].map((character, index) => {
       const span = document.createElement("span");
@@ -73,6 +73,13 @@
       return span;
     }),
   );
+
+  title.addEventListener("pointerenter", () => {
+    if (reduceMotion) return;
+    title.classList.remove("is-sheen");
+    void title.offsetWidth;
+    title.classList.add("is-sheen");
+  });
 
   const marqueeGroup = document.createElement("span");
   marqueeGroup.className = "case-marquee__group";
