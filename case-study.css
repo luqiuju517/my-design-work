@@ -378,19 +378,22 @@ img {
 }
 
 .case-gallery__stack--grid {
-  display: grid;
   width: 100%;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
-  align-items: start;
-  gap: clamp(8px, 1vw, 16px);
+  column-count: 6;
+  column-gap: clamp(8px, 1vw, 16px);
+  column-fill: balance;
 }
 
 .case-gallery__figure {
+  display: block;
   width: 100%;
   margin: 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 .case-gallery__image {
+  display: block;
   width: 100%;
   height: auto;
   aspect-ratio: auto;
@@ -723,6 +726,7 @@ img {
   }
 
   .case-gallery__stack--grid {
+    column-count: 3;
     width: auto;
     margin-inline: var(--case-gutter);
   }
@@ -731,6 +735,11 @@ img {
     align-items: flex-start;
     flex-direction: column;
     padding: 0 var(--case-gutter);
+  }
+
+  .case-gallery__stack--grid {
+    column-count: 1;
+    column-gap: 0;
   }
 
   .case-statement {
