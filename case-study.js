@@ -18,7 +18,7 @@
       english: "E-COMMERCE DESIGN",
       year: "2026",
       scope: "详情页 / 主图 / 电商视觉",
-      image: "./assets/project-02/detail-headset.jpg",
+      image: "./assets/project-02/detail-headset.webp",
       alt: "Headset Pro 耳机电商详情页",
       imagePosition: "50% 8%",
       description:

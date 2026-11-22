@@ -12,7 +12,7 @@ const projects = [
     title: "CHROME MEMORY",
     year: "2025",
     scope: "Campaign Visual · 3D",
-    image: "./assets/project-02/detail-headset.jpg",
+    image: "./assets/project-02/detail-headset.webp",
     alt: "Headset Pro 耳机电商详情页",
     lede: "以液态金属模拟记忆的反射与变形，让品牌叙事在柔软和锋利之间保持张力。",
     page: "./project-02.html",
