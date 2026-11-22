@@ -396,6 +396,10 @@ img {
   margin: 0;
 }
 
+.case-gallery__stack--four-up + .case-gallery__stack--four-up {
+  margin-top: var(--case-gallery-gap);
+}
+
 .case-gallery__figure {
   display: block;
   width: 100%;
