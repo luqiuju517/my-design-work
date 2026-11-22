@@ -400,6 +400,18 @@ img {
   margin-top: var(--case-gallery-gap);
 }
 
+.case-gallery__stack--pair {
+  --case-gallery-gap: clamp(8px, 1vw, 16px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--case-gallery-gap);
+  margin-top: var(--case-gallery-gap);
+}
+
+.case-gallery__stack--pair .case-gallery__figure {
+  margin: 0;
+}
+
 .case-gallery__figure {
   display: block;
   width: 100%;
@@ -752,6 +764,11 @@ img {
     margin-inline: var(--case-gutter);
   }
 
+  .case-gallery__stack--pair {
+    width: auto;
+    margin-inline: var(--case-gutter);
+  }
+
   .case-gallery__note {
     align-items: flex-start;
     flex-direction: column;
@@ -761,6 +778,10 @@ img {
   .case-gallery__stack--grid {
     column-count: 1;
     --case-gallery-gap: var(--case-gutter);
+  }
+
+  .case-gallery__stack--pair {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .case-statement {
