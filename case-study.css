@@ -377,6 +377,14 @@ img {
   margin: 0 auto;
 }
 
+.case-gallery__stack--grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(8px, 1vw, 16px);
+}
+
 .case-gallery__figure {
   width: 100%;
   margin: 0;
@@ -712,6 +720,11 @@ img {
   .case-gallery {
     margin-top: 60px;
     padding: 46px 0 28px;
+  }
+
+  .case-gallery__stack--grid {
+    width: auto;
+    margin-inline: var(--case-gutter);
   }
 
   .case-gallery__note {

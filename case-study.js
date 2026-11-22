@@ -18,8 +18,9 @@
       english: "E-COMMERCE DESIGN",
       year: "2026",
       scope: "详情页 / 主图 / 电商视觉",
-      image: "./assets/chrome-memory.svg",
-      alt: "液态金属与记忆概念视觉",
+      image: "./assets/project-02/detail-headset.jpg",
+      alt: "Headset Pro 耳机电商详情页",
+      imagePosition: "50% 8%",
       description:
         "围绕详情页、主图与店铺视觉展开全案设计，以清晰的信息层级提升产品表达和购买体验。",
       page: "./project-02.html",
@@ -101,7 +102,12 @@
           ${project.id === current.id ? 'aria-current="page"' : ""}
         >
           <span class="case-card__media">
-            <img src="${project.image}" alt="${project.alt}" loading="lazy" />
+            <img
+              src="${project.image}"
+              alt="${project.alt}"
+              style="object-position: ${project.imagePosition || "50% 50%"}"
+              loading="lazy"
+            />
           </span>
           <span class="case-card__tag">${project.id} / ${project.year}</span>
           <h3>${project.title}</h3>
