@@ -378,16 +378,17 @@ img {
 }
 
 .case-gallery__stack--grid {
+  --case-gallery-gap: clamp(8px, 1vw, 16px);
   width: 100%;
   column-count: 6;
-  column-gap: clamp(8px, 1vw, 16px);
+  column-gap: var(--case-gallery-gap);
   column-fill: balance;
 }
 
 .case-gallery__figure {
   display: block;
   width: 100%;
-  margin: 0;
+  margin: 0 0 var(--case-gallery-gap);
   break-inside: avoid;
   page-break-inside: avoid;
 }
@@ -739,7 +740,7 @@ img {
 
   .case-gallery__stack--grid {
     column-count: 1;
-    column-gap: 0;
+    --case-gallery-gap: var(--case-gutter);
   }
 
   .case-statement {
