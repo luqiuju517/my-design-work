@@ -598,15 +598,19 @@ img {
 
 .project-copy ul {
   display: flex;
-  gap: 7px;
+  gap: clamp(7px, 1.6vw, 14px);
   padding: 9px 0;
   margin: 0;
-  flex-direction: column;
+  flex-flow: row nowrap;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  color: var(--muted);
-  font: 9px/1.2 var(--mono);
+  color: var(--white);
+  font: 700 clamp(10px, 2.5vw, 13px)/1.2 var(--mono);
   list-style: none;
+}
+
+.project-copy ul li {
+  white-space: nowrap;
 }
 
 .project-open {
@@ -1053,6 +1057,9 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 20px;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.35;
 }
 
 .contact-channels a {
@@ -1062,8 +1069,9 @@ img {
 
 .contact-directory__contact p {
   margin: 0;
-  font-size: 9px;
-  line-height: 1.45;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.35;
   text-align: right;
 }
 
@@ -1326,7 +1334,6 @@ img {
 
   .project-copy ul {
     grid-column: 1;
-    gap: 5px;
   }
 
   .project-open {
@@ -1399,7 +1406,7 @@ img {
 
   .about-copy h2 {
     margin: 23px 0 28px;
-    font-size: clamp(27px, 7.4vw, 41px);
+    font-size: clamp(20px, 5vw, 28px);
   }
 
   .about-intro {
