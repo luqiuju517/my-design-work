@@ -644,6 +644,7 @@ img {
 }
 
 .works-table {
+  width: min(100%, 1160px);
   border-top: 1px solid var(--line);
 }
 
