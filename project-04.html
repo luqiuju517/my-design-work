@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="AIGC 其他设计案例：字体、视觉实验与新技术探索。" />
     <title>其他设计 | AIGC®</title>
-    <link rel="stylesheet" href="./case-study.css?v=20261121-title-scope" />
+    <link rel="stylesheet" href="./case-study.css?v=20261124-gallery-tabs" />
     <link rel="stylesheet" href="./target-cursor.css?v=20261120" />
   </head>
   <body class="case-page" data-project-id="04">
@@ -51,7 +51,66 @@
           <span>PROJECT ARCHIVE / TYPE DESIGN</span>
           <a class="case-gallery__back" href="./index.html?view=works">← 返回作品区</a>
         </div>
-        <div class="case-gallery__stack case-gallery__stack--grid">
+        <div class="case-gallery__filter" role="tablist" aria-label="其他设计分类" data-gallery-filter>
+          <button
+            class="case-gallery__tab is-active"
+            id="gallery-tab-type"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="gallery-panel-type"
+            data-gallery-tab="type"
+          >
+            字体设计
+          </button>
+          <button
+            class="case-gallery__tab"
+            id="gallery-tab-poster"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="gallery-panel-poster"
+            tabindex="-1"
+            data-gallery-tab="poster"
+          >
+            海报设计
+          </button>
+          <button
+            class="case-gallery__tab"
+            id="gallery-tab-ui"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="gallery-panel-ui"
+            tabindex="-1"
+            data-gallery-tab="ui"
+          >
+            UI设计
+          </button>
+          <button
+            class="case-gallery__tab"
+            id="gallery-tab-app"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="gallery-panel-app"
+            tabindex="-1"
+            data-gallery-tab="app"
+          >
+            APP设计
+          </button>
+          <span class="case-gallery__indicator" aria-hidden="true" data-gallery-indicator></span>
+        </div>
+        <div class="case-gallery__viewport" data-gallery-viewport>
+          <div class="case-gallery__track" data-gallery-track>
+            <section
+              class="case-gallery__panel is-active"
+              id="gallery-panel-type"
+              role="tabpanel"
+              aria-labelledby="gallery-tab-type"
+              data-gallery-panel="type"
+            >
+              <div class="case-gallery__stack case-gallery__stack--grid">
           <figure class="case-gallery__figure">
             <img
               class="case-gallery__image"
@@ -437,6 +496,48 @@
               decoding="async"
             />
           </figure>
+              </div>
+            </section>
+            <section
+              class="case-gallery__panel"
+              id="gallery-panel-poster"
+              role="tabpanel"
+              aria-labelledby="gallery-tab-poster"
+              aria-hidden="true"
+              data-gallery-panel="poster"
+            >
+              <div class="case-gallery__empty">
+                <span>02 / POSTER DESIGN</span>
+                <p>海报设计作品待添加</p>
+              </div>
+            </section>
+            <section
+              class="case-gallery__panel"
+              id="gallery-panel-ui"
+              role="tabpanel"
+              aria-labelledby="gallery-tab-ui"
+              aria-hidden="true"
+              data-gallery-panel="ui"
+            >
+              <div class="case-gallery__empty">
+                <span>03 / UI DESIGN</span>
+                <p>UI 设计作品待添加</p>
+              </div>
+            </section>
+            <section
+              class="case-gallery__panel"
+              id="gallery-panel-app"
+              role="tabpanel"
+              aria-labelledby="gallery-tab-app"
+              aria-hidden="true"
+              data-gallery-panel="app"
+            >
+              <div class="case-gallery__empty">
+                <span>04 / APP DESIGN</span>
+                <p>APP 设计作品待添加</p>
+              </div>
+            </section>
+          </div>
         </div>
       </section>
 
@@ -471,6 +572,6 @@
     </footer>
 
     <script src="./target-cursor.js?v=20261120"></script>
-    <script src="./case-study.js?v=20261122-gallery-webp"></script>
+    <script src="./case-study.js?v=20261124-gallery-tabs"></script>
   </body>
 </html>
