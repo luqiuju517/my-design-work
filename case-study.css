@@ -378,7 +378,6 @@ img {
   display: grid;
   width: min(100%, 1120px);
   margin: 0 auto clamp(28px, 4vh, 48px);
-  border: 1px solid var(--case-line);
   grid-template-columns: repeat(4, minmax(0, 1fr));
   background: rgba(3, 3, 3, 0.82);
   backdrop-filter: blur(14px);
@@ -398,10 +397,6 @@ img {
     background-color 0.35s ease;
 }
 
-.case-gallery__tab + .case-gallery__tab {
-  border-left: 1px solid var(--case-line);
-}
-
 .case-gallery__tab:hover {
   color: rgba(246, 246, 242, 0.76);
 }
@@ -419,7 +414,7 @@ img {
 
 .case-gallery__indicator {
   position: absolute;
-  bottom: -1px;
+  bottom: 0;
   left: 0;
   width: var(--indicator-width);
   height: 2px;
