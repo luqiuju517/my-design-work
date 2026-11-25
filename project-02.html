@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="AIGC 电商全案设计案例：详情页、主图与店铺视觉。" />
     <title>电商全案设计 | AIGC®</title>
-    <link rel="stylesheet" href="./case-study.css?v=20261122-equal-gallery-gap" />
+    <link rel="stylesheet" href="./case-study.css?v=20261125-project-gallery-groups" />
     <link rel="stylesheet" href="./target-cursor.css?v=20261120" />
   </head>
   <body class="case-page" data-project-id="02">
@@ -51,7 +51,48 @@
           <span>PROJECT ARCHIVE / E-COMMERCE DETAIL</span>
           <a class="case-gallery__back" href="./index.html?view=works">← 返回作品区</a>
         </div>
-        <div class="case-gallery__stack case-gallery__stack--grid">
+        <div
+          class="case-gallery__filter"
+          role="tablist"
+          aria-label="电商全案设计分类"
+          data-gallery-filter
+          style="--gallery-tab-count: 2"
+        >
+          <button
+            class="case-gallery__tab is-active"
+            id="gallery-tab-detail"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="gallery-panel-detail"
+            data-gallery-tab="detail"
+          >
+            详情页设计
+          </button>
+          <button
+            class="case-gallery__tab"
+            id="gallery-tab-amazon"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="gallery-panel-amazon"
+            tabindex="-1"
+            data-gallery-tab="amazon"
+          >
+            亚马逊电商详情页设计
+          </button>
+          <span class="case-gallery__indicator" aria-hidden="true" data-gallery-indicator></span>
+        </div>
+        <div class="case-gallery__viewport" data-gallery-viewport>
+          <div class="case-gallery__track" data-gallery-track>
+            <section
+              class="case-gallery__panel is-active"
+              id="gallery-panel-detail"
+              role="tabpanel"
+              aria-labelledby="gallery-tab-detail"
+              data-gallery-panel="detail"
+            >
+              <div class="case-gallery__stack case-gallery__stack--grid">
           <figure class="case-gallery__figure">
             <img
               class="case-gallery__image"
@@ -228,6 +269,22 @@
               decoding="async"
             />
           </figure>
+              </div>
+            </section>
+            <section
+              class="case-gallery__panel"
+              id="gallery-panel-amazon"
+              role="tabpanel"
+              aria-labelledby="gallery-tab-amazon"
+              aria-hidden="true"
+              data-gallery-panel="amazon"
+            >
+              <div class="case-gallery__empty">
+                <span>02 / AMAZON E-COMMERCE DETAIL</span>
+                <p>亚马逊电商详情页作品待添加</p>
+              </div>
+            </section>
+          </div>
         </div>
       </section>
 
@@ -262,6 +319,6 @@
     </footer>
 
     <script src="./target-cursor.js?v=20261120"></script>
-    <script src="./case-study.js?v=20261122-gallery-webp"></script>
+    <script src="./case-study.js?v=20261125-project-gallery-groups"></script>
   </body>
 </html>

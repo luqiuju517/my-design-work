@@ -383,6 +383,16 @@ img {
   backdrop-filter: blur(14px);
 }
 
+.case-gallery__group-title {
+  width: min(100%, 1120px);
+  margin: 0 auto clamp(18px, 2.8vh, 28px);
+  color: var(--case-text);
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
 .case-gallery__tab {
   min-width: 0;
   padding: clamp(18px, 2.4vw, 30px) 12px;
@@ -878,6 +888,11 @@ img {
   .case-gallery__filter {
     width: auto;
     margin: 0 var(--case-gutter) 28px;
+  }
+
+  .case-gallery__group-title {
+    width: auto;
+    margin: 0 var(--case-gutter) 18px;
   }
 
   .case-gallery__tab {
